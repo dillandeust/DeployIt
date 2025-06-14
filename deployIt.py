@@ -3,10 +3,13 @@ import typer
 from rich import print
 import docker
 import os, sys, tomli
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = typer.Typer(help="DeployIt – petit outil de déploiement Docker one-click")
 
-CONFIG_PATH_DEFAULT = os.path.expanduser("${PATH}")
+CONFIG_PATH_DEFAULT = os.path.expanduser(os.getenv("CONFIG_PATH"))
 @app.callback()
 def main(ctx: typer.Context,
          config: str = typer.Option(CONFIG_PATH_DEFAULT, "--config", "-c",
