@@ -17,8 +17,10 @@ sdist/
 var/
 wheels/
 *.egg-info/
+deployit.egg-info/
 .installed.cfg
 *.egg
+deployit/__pycache__/
 
 # Virtual Environment
 venv/
@@ -34,6 +36,7 @@ ENV/
 
 # Project specific
 .deployit/config.toml
+deployIt.py  # Ancien fichier à la racine
 
 # Docker
 .docker/
